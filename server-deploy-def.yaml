@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twinder-server-deployment
+  labels: 
+    app: twinder
+    type: back-end
+spec:
+  template:
+    metadata:
+      name: twinderapp-pod
+      labels:
+        app: twinder
+        type: back-end
+    spec:
+      containers:
+      - name: twinderserver
+        image: sjchin88/twinderserver:v0.1
+  replicas: 2
+  selector: 
+    matchLabels:
+      type: back-end
