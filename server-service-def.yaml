@@ -5,7 +5,7 @@ metadata:
   labels:
     app: twinder
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
   selector:
